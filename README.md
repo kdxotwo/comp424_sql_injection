@@ -11,6 +11,9 @@ Things you may want to cover:
 * Ruby version
 ruby-2.7.0
 
+* Database
+Mysql
+
 * System dependencies
 
 * Configuration
@@ -23,6 +26,15 @@ To create your database, from your terminal go to the root directory of your pro
 
 Then run migrations with 
 'rake db:migrate'
+
+* Data
+    1. Register many users through the UI
+    2. Populate the product table by either adding them manually through you mysql client or by running rails console. 
+    
+    If you want to do it through rails console, run this command from your terminal in the root directory of the application:
+        'rails console'
+    then create products with this command:
+    'Product.create(:name => "something", :quantity => 5, :price => 15.50)'
 
 * To test the sql injection
 
