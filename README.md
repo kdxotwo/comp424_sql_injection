@@ -19,11 +19,11 @@ Things you may want to cover:
     * Use RVM to manage your ruby versions: https://rvm.io/rvm/install
 
 * Database creation\
-To create your database, from your terminal go to the root directory of your project and run this command:\
+To create your database, from your terminal go to the root directory of your project and run this command:
 
-'rake db:create'\
+'rake db:create'
 
-Then run migrations with\ 
+Then run migrations with 
 'rake db:migrate'
 
 * Data
