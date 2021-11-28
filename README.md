@@ -5,35 +5,34 @@ application up and running.
 
 Things you may want to cover:
 
-* Rails version
-6.1.1
-
-* Ruby version
-ruby-2.7.0
-
-* Database
-Mysql
-
 * System dependencies
 
-* Configuration
-Use RVM to manage your ruby versions: https://rvm.io/rvm/install
+    * Rails version\
+    6.1.1
 
-* Database creation
-To create your database, from your terminal go to the root directory of your project and run this command:
+    * Ruby version\
+    ruby-2.7.0
 
-'rake db:create'
+    * Database\
+    Mysql
 
-Then run migrations with 
+    * Use RVM to manage your ruby versions: https://rvm.io/rvm/install
+
+* Database creation\
+To create your database, from your terminal go to the root directory of your project and run this command:\
+
+'rake db:create'\
+
+Then run migrations with\ 
 'rake db:migrate'
 
 * Data
     1. Register many users through the UI
     2. Populate the product table by either adding them manually through you mysql client or by running rails console. 
     
-    If you want to do it through rails console, run this command from your terminal in the root directory of the application:
-        'rails console'
-    then create products with this command:
+    If you want to do it through rails console, run this command from your terminal in the root directory of the application:\
+        'rails console'\
+    then create products with this command:\
     'Product.create(:name => "something", :quantity => 5, :price => 15.50)'
 
 * To test the sql injection
