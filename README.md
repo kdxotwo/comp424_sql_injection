@@ -21,6 +21,24 @@ To create your database, from your terminal go to the root directory of your pro
 
 'rake db:create'
 
+Then run migrations with 
+'rake db:migrate'
+
+* To test the sql injection
+
+    1. Create an account through registration page
+    2. Log in
+    3. Insert any sql injections (time-based, tautology-based, union-based) inside the search input field
+        1. s' or 1 = 1 -- 
+        2. s' and 1 = SLEEP(20) -- 
+        3. s' union(select username, password_hash, email from users) --  
+    4. If the union sql injection is successful, you'll be able to view the username and password of all users including admins, then you'll be able to login as anyone.
+
+    Note: There are two authentication implemented, a secure and insecure one. When pulling the changes, you'll be using the insecure authentication. You cannot try sql injection through login because of the authentication logic not using a single query such as "Select * where username = 'test' and password = '1234'"
+
+* To secure
+    You'll need to uncomment the blocks of codes marked as secure and comment out the ones marked as insecure
+
 
 * How to run the test suite
 

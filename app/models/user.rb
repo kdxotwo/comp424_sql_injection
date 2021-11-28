@@ -3,7 +3,10 @@ class User < ApplicationRecord
     
     attr_accessor :password
 
+    # secure for authentication
     # before_save :encrypt_password
+    
+    #insecure for authentication 
     before_save :without_encyrpted_password
 
     validates_confirmation_of :password
