@@ -1,0 +1,36 @@
+<div class="main_content clear">
+    <div class="content">
+        <h1>Product Search</h1>
+
+        <%= form_tag product_results_path do %>
+        <p>
+            <%= text_field_tag :search, params[:search] %>
+        </p>
+        <p class="button"><%= submit_tag "Search" %></p>
+        <% end %>
+    </div>
+
+    <div class="content">
+        <h2>Products</h2>
+        <% if @products.empty? %>
+            <%= "0 Products found!" %>
+        <% else %>
+        <table class="table">
+            <thead>
+            <th>Product Names</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            </thead>
+            <tbody>
+            <% @products.each do |product| %>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.quantity %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+        <% end %>
+    </div>
+</div>
