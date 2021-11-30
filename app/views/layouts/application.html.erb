@@ -11,20 +11,33 @@
   </head>
 
   <body>
-    <div id="user_navigation" class="user_nav">
-      <% if current_user %>
-        Logged in as <%= current_user.username %>.
-        <%= link_to "Log out", log_out_path %>
-      <% else %>
-        <%= link_to "Sign up", sign_up_path %> or
-        <%= link_to "log in", log_in_path %>
-      <% end %>
-    </div>
-
-    <div class="clear"></div>
-  
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SQLINJ</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right list-group list-group-horizontal">
+          <% if current_user %>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-user"><%= current_user.username %></span>
+            </li>
+            <li class="list-group-item">
+              <span><%= link_to "Log out", log_out_path %></span>
+            </li>
+          <% else %>
+            <li class="list-group-item">
+              <%= link_to "Sign up", sign_up_path %>
+            </li>
+            <li class="list-group-item">
+              <%= link_to "log in", log_in_path %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>  
+    <br />
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "content" %>
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => flash_class(name.to_sym) %>
     <% end %>
     <%= yield %>
   </body>

@@ -6,7 +6,8 @@ class UsersController < ApplicationController
     def create
       @user = User.new(params_mass_assignment)
       if @user.save
-        redirect_to root_url, :notice => "Signed up!"
+        flash[:success] = "Signed up!"
+        redirect_to root_url
       else
         render "new"
       end

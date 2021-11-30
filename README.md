@@ -18,6 +18,9 @@ Things you may want to cover:
 
     * Use RVM to manage your ruby versions: https://rvm.io/rvm/install
 
+    * The app uses bootstrap. To install bootstrap, follow this guide until section 'I - Add BootStrap' <a href="https://dev.to/songta17/rails-6-with-bootstrap-5-5c08">https://dev.to/songta17/rails-6-with-bootstrap-5-5c08</a> <b><i>Note: you need popper/core instead of popper.js and so run this command instead of what the guide says: 'yarn add @popperjs/core' .</i></b>
+
+
 * Database creation\
 To create your database, from your terminal go to the root directory of your project and run this command:
 
@@ -46,6 +49,10 @@ Then run migrations with
     4. If the union sql injection is successful, you'll be able to view the username and password of all users including admins, then you'll be able to login as anyone.
 
     Note: There are two authentication implemented, a secure and insecure one. When pulling the changes, you'll be using the insecure authentication. You cannot try sql injection through login because of the authentication logic not using a single query such as "Select * where username = 'test' and password = '1234'"
+
+* Run Application
+    1. Run this command to start the application, 'rails server'
+    2. Access the applicaiton through http://localhost:3000
 
 * To secure
     You'll need to uncomment the blocks of codes marked as secure and comment out the ones marked as insecure

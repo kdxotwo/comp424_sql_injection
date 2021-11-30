@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      redirect_to root_url, :notice => "Logged in!"
+      flash[:success] = "Logged in!"
+      redirect_to root_url
     else
       flash.now.alert = "Invalid username or password"
       render "new"
@@ -20,6 +21,7 @@ class SessionsController < ApplicationController
   
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    flash[:success] = "Logged out!"
+    redirect_to root_url
   end
 end

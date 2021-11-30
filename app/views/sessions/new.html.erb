@@ -1,18 +1,27 @@
-<div class="main_content clear">
-    <div class="content">
-        <h1>Log in</h1>
-
-        <%= form_tag sessions_path do %>
-        <p>
-            <%= label_tag :username %><br />
-            <%= text_field_tag :username, params[:username] %>
-        </p>
-        <p>
-            <%= label_tag :password %><br />
-            <%= password_field_tag :password %>
-        </p>
-        <%= link_to "Sign up", sign_up_path %>
-        <p class="button"><%= submit_tag "Log in" %></p>
-        <% end %>
+<div class="container d-flex justify-content-center align-self-center ">
+    <div class="card w-25 mt-5">
+        <div class="card-body">
+            <div class="card-title text-center mb-4 mt-1">
+                <h3>Log in</h3>
+            </div>
+            <hr>
+            <%= form_with url: "/sessions", method: :post do |f| %>
+                <div class="form-group col">
+                    <div class="col-sm-8 mx-auto">
+                        <%= f.label :username %><br />
+                        <%= f.text_field :username, class: "form-control"%>
+                    </div>
+                    <div class="col-sm-8 mx-auto">
+                        <%= f.label :password %><br />
+                        <%= f.password_field :password, class: "form-control" %>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group text-center">
+                    <%= f.submit "Log In", class: "btn btn-primary btn-block" %>
+                </div>
+                <p class="text-center"><%= link_to "Sign up", sign_up_path %></p>
+            <% end %>
+        </div>
     </div>
 </div>
